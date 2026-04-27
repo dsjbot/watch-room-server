@@ -9,6 +9,7 @@
 ## 功能特性
 
 - 🎬 多人同步观影（播放/暂停/跳转同步）
+- 🖥️ 屏幕共享房间（实时共享桌面/窗口）
 - 💬 实时聊天系统
 - 🎙️ 语音通话（WebRTC）
 - 🏠 房间管理（创建/加入/离开）
@@ -38,7 +39,6 @@ docker run -d \
   -p 3001:3001 \
   -e AUTH_KEY=your-secret-key \
   -e ALLOWED_ORIGINS=https://your-domain.com \
-  -e NODE_ENV=production \
   cyc233/watch-room-server:latest
 ```
 
@@ -92,9 +92,6 @@ AUTH_KEY=your-secret-auth-key-change-this
 
 # 允许的跨域来源（逗号分隔）
 ALLOWED_ORIGINS=https://your-domain.com,https://www.your-domain.com
-
-# 运行环境
-NODE_ENV=production
 ```
 
 ### 3. 开发模式运行
@@ -130,7 +127,6 @@ docker run -d \
   -p 3001:3001 \
   -e AUTH_KEY=your-secret-key \
   -e ALLOWED_ORIGINS=https://your-domain.com \
-  -e NODE_ENV=production \
   cyc233/watch-room-server:latest
 ```
 
@@ -149,7 +145,6 @@ services:
     environment:
       - AUTH_KEY=your-secret-key
       - ALLOWED_ORIGINS=https://your-domain.com
-      - NODE_ENV=production
 ```
 
 保存为 `docker-compose.yml`，然后运行：
